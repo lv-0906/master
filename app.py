@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config
-from routes.r import register_blueprints
+from .routes import register_blueprints
 
 # 初始化 Flask
 app = Flask(__name__)
