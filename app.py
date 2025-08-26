@@ -1,6 +1,8 @@
 from flask import Flask
 from config import Config
-from .routes import register_blueprints
+from routes.__init__ import register_blueprints
+import sys
+sys.dont_write_bytecode = True
 
 # 初始化 Flask
 app = Flask(__name__)
