@@ -2,8 +2,7 @@ from flask import Blueprint, jsonify,request
 from config import get_db_connection
 from db_utils import is_value_exists
 
-
-users_bp = Blueprint('users', __name__, url_prefix='/users')
+users_bp = Blueprint('users', __name__, url_prefix='/api')
 
 @users_bp.route('/adduser', methods=['POST'])
 def add_user():

@@ -3,8 +3,8 @@ from config import get_db_connection
 from datetime import datetime, timedelta
 import uuid
 
-family_bp = Blueprint("family", __name__, url_prefix="/family")
-@family_bp.route("/")
+family_bp = Blueprint("family", __name__, url_prefix="/api")
+@family_bp.route("/getfamily",methods=["GET"])
 def get_family():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -14,7 +14,7 @@ def get_family():
     cursor.close()
     conn.close()
     return jsonify(family)
-@family_bp.route("/",methods=["POST"])
+@family_bp.route("/createfamily",methods=["POST"])
 def add_family():
     conn = get_db_connection()
     data = request.get_json()
